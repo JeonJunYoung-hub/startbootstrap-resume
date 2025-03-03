@@ -22,14 +22,24 @@ html(lang='en')
         // Core theme CSS (includes Bootstrap)
         link(href='css/styles.css', rel='stylesheet')
 
+
+        // Devicon
+        link(rel='stylesheet', href='https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css')
+
+        
+
+
+
+        
+
     body#page-top
 
         // Navigation
         nav#sideNav.navbar.navbar-expand-lg.navbar-dark.bg-primary.fixed-top
             a.navbar-brand.js-scroll-trigger(href='#page-top')
-                span.d-block.d-lg-none Clarence Taylor
+                span.d-block.d-lg-none 
                 span.d-none.d-lg-block
-                    img.img-fluid.img-profile.rounded-circle.mx-auto.mb-2(src='assets/img/profile.jpg', alt='...')
+                    img.img-fluid.img-profile.rounded-circle.mx-auto.mb-2(src='assets/img/Photo.jpg', alt='My Profile Photo')
             button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
                 span.navbar-toggler-icon
             #navbarResponsive.collapse.navbar-collapse
@@ -37,7 +47,7 @@ html(lang='en')
                     li.nav-item
                         a.nav-link.js-scroll-trigger(href='#about') About
                     li.nav-item
-                        a.nav-link.js-scroll-trigger(href='#experience') Experience
+                        a.nav-link.js-scroll-trigger(href='#Experience') Experience
                     li.nav-item
                         a.nav-link.js-scroll-trigger(href='#education') Education
                     li.nav-item
@@ -45,7 +55,7 @@ html(lang='en')
                     li.nav-item
                         a.nav-link.js-scroll-trigger(href='#interests') Interests
                     li.nav-item
-                        a.nav-link.js-scroll-trigger(href='#awards') Awards
+                        a.nav-link.js-scroll-trigger(href='#Activity') Activity
 
         // Page Content
         .container-fluid.p-0
@@ -54,65 +64,65 @@ html(lang='en')
             section#about.resume-section
                 .resume-section-content
                     h1.mb-0
-                        | Clarence 
-                        span.text-primary Taylor
+                        span.text-custom Junyoung
+                        span.text-primary Jeon
                     .subheading.mb-5
-                        | 3542 Berry Street · Cheyenne Wells, CO 80810 · (317) 585-8468 · 
-                        a(href='mailto:name@email.com') name@email.com
+                        span.text-black 1315 The Clifton St NW · 20009 · (202) 641-6671 
+                        a.text-primary(href='mailto:name@email.com') · young011204@gmail.com
                     p.lead.mb-5
-                        | I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.
+                        span.text-black I am a twenty-two-year-old versatile student with communication skills and a solid foundation in engineering. I have Studied microprocessors, C programming and Electronic Circuits. I am eager to find a position where I can apply my knowledge and skills.
                     .social-icons
-                        a.social-icon(href='#!')
+                        a.social-icon(href='https://www.linkedin.com/in/junyoung-jeon-electronics-20a51830a/')
                             i.fab.fa-linkedin-in
-                        a.social-icon(href='#!')
+                        a.social-icon(href='https://github.com/JeonJunYoung-hub')
                             i.fab.fa-github
-                        a.social-icon(href='#!')
-                            i.fab.fa-twitter
+                        a.social-icon(href='https://www.instagram.com/young._.young/')
+                            i.fab.fa-instagram
                         a.social-icon(href='#!')
                             i.fab.fa-facebook-f
 
             hr.m-0
 
             // Experience
-            section#experience.resume-section
+            section#Experience.resume-section
                .resume-section-content
                     h2.mb-5 Experience
 
                     .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
                         .flex-grow-1
-                            h3.mb-0 Senior Web Developer
-                            .subheading.mb-3 Intelitec Solutions
+                            h3.mb-0 Line tracer project using stm32 microcontroller  
+                            .subheading.mb-3 Embedded Systems Engineer
                             p
-                                | Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.
+                                | Designed and integrated hardware components, including motors and infrared sensors, for an STM32-based line tracer robot. Developed motor control and sensor processing using embedded C, ensuring precise movement along the track.
                         .flex-shrink-0
-                            span.text-primary March 2013 - Present
+                            span.text-primary March 2024 - June 2024
 
                     .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
                         .flex-grow-1
-                            h3.mb-0 Web Developer
-                            .subheading.mb-3 Intelitec Solutions
+                            h3.mb-0 Snake Game Development using C++ MFC project
+                            .subheading.mb-3 Game Developer
                             p
-                                | Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.
+                                | Created a classic snake game using C++ and MFC, implementing game mechanics, controls, and collision detection. Developed an interactive UI with score tracking while gaining experience in object-oriented and event-driven programming.
                         .flex-shrink-0
-                            span.text-primary December 2011 - March 2013
+                            span.text-primary March 2024 - June 2024
 
                     .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
                         .flex-grow-1
-                            h3.mb-0 Junior Web Designer
-                            .subheading.mb-3 Shout! Media Productions
+                            h3.mb-0 Republic of Korea Army
+                            .subheading.mb-3 Sergeant, Communication Specialist 
                             p
-                                | Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.
+                                | Installed and optimized antennas for military operations, ensuring secure communication. Operated and maintained equipment in field training, applying electronics and telecommunications principles.
                         .flex-shrink-0
-                            span.text-primary July 2010 - December 2011
+                            span.text-primary June 2022 - December 2023
 
                     .d-flex.flex-column.flex-md-row.justify-content-between
                         .flex-grow-1
-                            h3.mb-0 Web Design Intern
-                            .subheading.mb-3 Shout! Media Productions
+                            h3.mb-0 FPGA Stopwatch Development using Vivado
+                            .subheading.mb-3 FPGA Developer
                             p
-                                | Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+                                | Designed and deployed an FPGA-based stopwatch using Xilinx Vivado, optimizing timing logic for precision and efficiency. Enhanced expertise in digital logic design, HDL implementation, and FPGA architecture for advanced embedded systems.
                         .flex-shrink-0
-                            span.text-primary September 2008 - June 2010
+                            span.text-primary September 2021 - December 2021
 
             hr.m-0
 
@@ -123,20 +133,20 @@ html(lang='en')
 
                     .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
                         .flex-grow-1
-                            h3.mb-0 University of Colorado Boulder
-                            .subheading.mb-3 Bachelor of Science
-                            div Computer Science - Web Development Track
-                            p GPA: 3.23
+                            h3.mb-0 KOREATECH
+                            .subheading.mb-3 Bachelor of Electronic Engineering
+                            div Electronic Engineering - Semiconductor Track
+                            p GPA: 3.02
                         .flex-shrink-0
-                            span.text-primary August 2006 - May 2010
+                            span.text-primary March 2024 - Current  
 
                     .d-flex.flex-column.flex-md-row.justify-content-between
                         .flex-grow-1
-                            h3.mb-0 James Buchanan High School
-                            .subheading.mb-3 Technology Magnet Program
-                            p GPA: 3.56
+                            h3.mb-0 University of Hawai’I West O’ahu
+                            .subheading.mb-3 Study Abroad
+                            p short-term course, winter session
                         .flex-shrink-0
-                            span.text-primary August 2002 - May 2006
+                            span.text-primary Jan 2022 - Feb 2022
 
             hr.m-0
 
@@ -147,47 +157,37 @@ html(lang='en')
                     .subheading.mb-3 Programming Languages & Tools
                     ul.list-inline.dev-icons
                         li.list-inline-item
-                            i.fab.fa-html5
+                            i.devicon-cplusplus-plain.colored(title="C++")
                         li.list-inline-item
-                            i.fab.fa-css3-alt
+                            i.devicon-c-plain.colored(title="C")
                         li.list-inline-item
-                            i.fab.fa-js-square
+                            i.devicon-html5-plain.colored(title="HTML")
                         li.list-inline-item
-                            i.fab.fa-angular
+                            img(src='assets/icons/Stm32.jpg', alt='Stm32', title='Stm32', width='50', height='50')
                         li.list-inline-item
-                            i.fab.fa-react
+                            img(src='assets/icons/Vivado.jpg', alt='Vivado', title='Vivado', width='50', height='50')
                         li.list-inline-item
-                            i.fab.fa-node-js
+                            img(src='assets/icons/premiere-pro.jpg', alt='Premiere Pro', title='Premiere Pro', width='50', height='50')
                         li.list-inline-item
-                            i.fab.fa-sass
+                            img(src='assets/icons/Orcad.jpg', alt='Orcad', title='Orcad', width='50', height='50')
                         li.list-inline-item
-                            i.fab.fa-less
+                            img(src='assets/icons/Excel.jpg', alt='excel', title='excel', width='50', height='50')
                         li.list-inline-item
-                            i.fab.fa-wordpress
+                            img(src='assets/icons/Powerpoint.jpg', alt='owerpoint', title='owerpoint', width='50', height='50')
                         li.list-inline-item
-                            i.fab.fa-gulp
-                        li.list-inline-item
-                            i.fab.fa-grunt
-                        li.list-inline-item
-                            i.fab.fa-npm
-                    .subheading.mb-3 Workflow
+                            img(src='assets/icons/Solidworks.jpg', alt='oSolidworks', title='Solidworks', width='50', height='50')
+
+                    .subheading.mb-3 Language
                     ul.fa-ul.mb-0
                         li
                             span.fa-li
                                 i.fas.fa-check
-                            | Mobile-First, Responsive Design
+                            | Korean: native speakers
                         li
                             span.fa-li
                                 i.fas.fa-check
-                            | Cross Browser Testing & Debugging
-                        li
-                            span.fa-li
-                                i.fas.fa-check
-                            | Cross Functional Teams
-                        li
-                            span.fa-li
-                                i.fas.fa-check
-                            | Agile Development & Scrum
+                            | TOEIC 805 out of 990, OPIC IH Level
+                       
 
             hr.m-0
 
@@ -196,55 +196,27 @@ html(lang='en')
                 .resume-section-content
                     h2.mb-5 Interests
                     p
-                        | Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.
+                        | I have a detail-oriented and meticulous personality, which is why I found CAD PCB Editor particularly interesting as it closely reflects my traits. I aspire to pursue an internship either as a Hardware Engineer or in the field of OrCAD PCB Editor.
                     p.mb-0
-                        | When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.
+                        | While my previous projects may not be directly related, I have experience designing and integrating hardware components, which has strengthened my understanding of electronic systems. Regardless of prior experience, I am highly motivated to learn and dedicate myself to excelling in this field.
 
             hr.m-0
 
-            // Awards
-            section#awards.resume-section
+            // Activity
+            section#Activity.resume-section
                 .resume-section-content
-                    h2.mb-5 Awards & Certifications
-                    ul.fa-ul.mb-0
-                        li
-                            span.fa-li
-                                i.fas.fa-trophy.text-warning
-                            | Google Analytics Certified Developer
-                        li
-                            span.fa-li
-                                i.fas.fa-trophy.text-warning
-                            | Mobile Web Specialist - Google Certification
-                        li
-                            span.fa-li
-                                i.fas.fa-trophy.text-warning
-                            | 1
-                            sup st 
-                            | Place - University of Colorado Boulder - Emerging Tech Competition 2009
-                        li
-                            span.fa-li
-                                i.fas.fa-trophy.text-warning
-                            | 1
-                            sup st 
-                            | Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)
-                        li
-                            span.fa-li
-                                i.fas.fa-trophy.text-warning
-                            | 2
-                            sup nd 
-                            | Place - University of Colorado Boulder - Emerging Tech Competition 2008
-                        li
-                            span.fa-li
-                                i.fas.fa-trophy.text-warning
-                            | 1
-                            sup st 
-                            | Place - James Buchanan High School - Hackathon 2006
-                        li
-                            span.fa-li
-                                i.fas.fa-trophy.text-warning
-                            | 3
-                            sup rd 
-                            | Place - James Buchanan High School - Hackathon 2005
+                    h2.mb-5 Activity
+                    div
+                    h3.mb-0 Ls Group & Green Umbrella Children’s Foundation
+                    div
+                    p
+                      | Science Instructor, LS Dream Science Class
+                    p
+                      | Led and instructed elementary school students in a one-month program focused on assembling science kits and explaining key scientific principles. Demonstrated leadership by effectively managing classroom dynamics and maintaining high student engagement. Adapted teaching methods to accommodate diverse learning styles, ensuring a successful and interactive learning experience.
+
+                            
+                           
+                    
 
         // Bootstrap core JS
         script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js')
