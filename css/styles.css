@@ -8031,6 +8031,7 @@ textarea.form-control-lg {
 }
 
 /* rtl:end:remove */
+
 .text-primary {
   --bs-text-opacity: 1;
   color: rgba(29, 173, 226, var(--bs-text-opacity)) !important;
