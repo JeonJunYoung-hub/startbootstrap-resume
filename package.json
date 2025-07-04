@@ -3,16 +3,19 @@
     "name": "startbootstrap-resume",
     "version": "7.0.6",
     "scripts": {
-        "build": "npm run clean && npm run build:pug && npm run build:scss && npm run build:scripts && npm run build:assets",
-        "build:assets": "node scripts/build-assets.js",
-        "build:pug": "node scripts/build-pug.js",
-        "build:scripts": "node scripts/build-scripts.js",
-        "build:scss": "node scripts/build-scss.js",
-        "clean": "node scripts/clean.js",
-        "start": "npm run build && live-server dist --port=5500",
-        "start:debug": "npm run build && node scripts/start-debug.js",
-        "watch": "nodemon --watch src -e pug,scss,js --exec \"npm run build\""
-    },
+      "build": "npm run clean && npm run build:pug && npm run build:scss && npm run build:scripts && npm run build:assets ",
+      "build:assets": "copyfiles -f src/css/custom.css dist/assets && copyfiles -f src/css/custom.css dist/css && copyfiles -f src/assets/icons/**/* dist/assets/icons && copyfiles -f src/assets/img/**/* dist/assets/img && copyfiles -f src/assets/Pdfs/**/* dist/assets/Pdfs",
+      "build:pug": "node scripts/build-pug.js",
+      "build:scripts": "node scripts/build-scripts.js",
+      "build:scss": "node scripts/build-scss.js",
+      "clean": "node scripts/clean.js",
+      "start": "npm run build && live-server dist --port=5500",
+      "start:debug": "npm run build && node scripts/start-debug.js",
+      "watch": "nodemon --watch src -e pug,scss,js --exec \"npm run build\"",
+      "deploy": "gh-pages -d dist",
+      "copy:custom": "copyfiles -f src/css/custom.css dist/assets && copyfiles -f src/css/custom.css dist/css"
+     }
+,
     "description": "Resume is a simple, yet elegant resume and CV theme for Bootstrap 4.",
     "keywords": [
         "css",
@@ -44,6 +47,7 @@
         "browser-sync": "2.29.1",
         "chokidar": "3.5.3",
         "concurrently": "6.3.0",
+        "copyfiles": "^2.4.1",
         "gh-pages": "^6.3.0",
         "postcss": "8.4.21",
         "prettier": "2.8.6",
