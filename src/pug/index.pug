@@ -1,3 +1,22 @@
+mixin skill(name, level, label)
+    .skill-item(data-level=level)
+        .skill-header
+            span.skill-name= name
+        .skill-visual
+            .skill-scale(role='img', aria-label=`${name} proficiency: ${label}`)
+                span.skill-track
+                span.skill-point(data-stage='beginner')
+                span.skill-point(data-stage='lower-intermediate')
+                span.skill-point(data-stage='intermediate')
+                span.skill-point(data-stage='upper-intermediate')
+                span.skill-point(data-stage='advanced')
+            .skill-labels(aria-hidden='true')
+                span(data-stage='beginner') Beginner
+                span(data-stage='lower-intermediate') Lower-Intermediate
+                span(data-stage='intermediate') Intermediate
+                span(data-stage='upper-intermediate') Upper-Intermediate
+                span(data-stage='advanced') Advanced
+
 doctype html
 html(lang='en')
 
@@ -23,9 +42,6 @@ html(lang='en')
         link(href='css/styles.css', rel='stylesheet')
 
 
-        // Devicon
-        link(rel='stylesheet', href='https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css')
-
         //- 커스텀 오버라이드 CSS
         link(href='css/custom.css', rel='stylesheet')
 
@@ -50,13 +66,11 @@ html(lang='en')
                     li.nav-item
                         a.nav-link.js-scroll-trigger(href='#Experience') Experience
                     li.nav-item
+                        a.nav-link.js-scroll-trigger(href='#projects') Projects
+                    li.nav-item
                         a.nav-link.js-scroll-trigger(href='#education') Education
                     li.nav-item
                         a.nav-link.js-scroll-trigger(href='#skills') Skills
-                    li.nav-item
-                        a.nav-link.js-scroll-trigger(href='#interests') Interests
-                    li.nav-item
-                        a.nav-link.js-scroll-trigger(href='#Cover-letter') Cover-letter
                     li.nav-item
                         a.nav-link.js-scroll-trigger(href='#Activity') Activity
                     
@@ -72,10 +86,10 @@ html(lang='en')
                         span.text-custom Junyoung
                         span.text-primary Jeon
                     .subheading.mb-5
-                        span.text-black 1315 The Clifton St NW · 20009 · (202) 641-6671 
+                        span.text-black South Korea · 010-9181-5740 (KR) · (202) 641-6671 (US)
                         a.text-primary(href='mailto:name@email.com') · young011204@gmail.com
                     p.lead.mb-5
-                        span.text-black I am a twenty-two-year-old versatile student with communication skills and a solid foundation in engineering. I have Studied microprocessors, C programming and Electronic Circuits. I am eager to find a position where I can apply my knowledge and skills.
+                        span.text-black I am a 24-year-old Electronic Engineering undergraduate at KOREATECH with hands-on experience in embedded systems, edge AI, cloud-connected IoT, and field-deployed sensing systems. I have developed firmware and data pipelines using Nordic Semiconductor SoCs, Zephyr/NCS, MQTT, Google Cloud Platform, and MongoDB, and I am expanding my experience in intelligent robotics through deep reinforcement learning. I enjoy solving hardware–software integration challenges and building reliable systems that operate in real-world environments.
                     .social-icons
                         a.social-icon(href='https://www.linkedin.com/in/junyoung-j-20a51830a/')
                             i.fab.fa-linkedin-in
@@ -92,68 +106,138 @@ html(lang='en')
                .resume-section-content
                     h2.mb-5 Experience
 
+                    .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
+                        .flex-grow-1
+                            h3.mb-0 Desert Research Institute (DRI)
+                            .subheading.mb-3 Embedded Systems & Cloud Data Pipeline Engineer
+                            ul
+                                li Developed embedded firmware for a custom cellular-enabled environmental sensor board using a Nordic Semiconductor SoC for reliable real-time data collection in remote environments.
+                                li Designed and implemented cellular data transmission and an end-to-end MQTT-to-HTTP ingestion pipeline using EMQX on Google Cloud Platform.
+                                li Integrated MongoDB for long-term sensor data storage and analysis.
+                                li Tested, validated, and optimized data flow from field-deployed devices to cloud infrastructure for stable, continuous operation.
+                        .flex-shrink-0
+                            span.text-primary May 2025 – December 2025
 
                     .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
                         .flex-grow-1
-                            h3.mb-0 MATLAB-Based Sound Simulation Projects                                                                                                                       
-                            .subheading.mb-3 Embedded Systems Engineer
-                            p
-                                | I developed a MATLAB GUI for interactive piano sound simulation, integrating ADSR envelope modeling for realistic audio dynamics and utilizing Fourier Transform for frequency analysis and harmonic synthesis to enhance audio realism.
+                            h3.mb-0 AVIEW International
+                            .subheading.mb-3 Audio & Content Editor · Remote Independent Contractor
+                            ul
+                                li Collaborating remotely in English with international production, editing, and quality-assurance teams to produce multilingual dubbed video content.
+                                li Editing German- and French-language dubbed content using ElevenLabs and DaVinci Resolve, including voice replacement, redubbing, clip timing, lip-sync adjustment, pronunciation correction, and audio-level balancing.
+                                li Matching translated dialogue with original English scripts and adding emotion, tone, and delivery instructions to improve the naturalness and consistency of AI-generated speech.
+                                li Reviewing timestamp-based QA feedback and systematically correcting recurring issues, including lip-sync, accent, incorrect voice assignment, missing background audio, and volume imbalance across episodes.
                         .flex-shrink-0
-                            span.text-primary June 2024 - December 2024
-
-
-                    .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
-                        .flex-grow-1
-                            h3.mb-0 Semiconductor Process Training                                                                                                                       
-                            .subheading.mb-3 Semiconductor Fabrication Trainee
-                            p
-                                | I gained hands-on experience in semiconductor process training, understanding wafer characteristics, wet cleaning techniques, and deposition methods like CVD, PECVD, and PVD while actively participating in fabrication steps and cleanroom procedures.
-                        .flex-shrink-0
-                            span.text-primary June 2024 - December 2024
+                            span.text-primary July 2026 – Present
 
                     .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
                         .flex-grow-1
-                            h3.mb-0 PCB Design and Circuit Schematic Project  
-                            .subheading.mb-3 PCB Design Engineer
-                            p
-                                | Gained hands-on experience with Cadence Capture and PCB Editor, designing and optimizing circuit schematics and PCB layouts, creating copper pours, and ensuring precise component placement, signal integrity, and manufacturability.
+                            h3.mb-0 Sentinel Labs
+                            .subheading.mb-3 Co-Founder & Embedded Systems Lead
+                            ul
+                                li Leading the development of an IoT-based particulate-matter exposure monitoring and hazard-alert platform for construction and industrial worksites.
+                                li Developing embedded systems using Nordic nRF5340, BMV080 and SEN54 particulate-matter sensors, SHT40 environmental sensors, and TI IWRL6432 radar.
+                                li Integrating I2C, UART, BLE, and Flash memory for sensor acquisition, worker-zone detection, local data logging, and device communication.
+                                li Designing alerts based on personal exposure, area risk, and worker dwell time.
+                                li Selected for the inaugural cohort of Korea’s government-backed “Startup for All Project.”
                         .flex-shrink-0
-                            span.text-primary June 2024 - December 2024
-
-                    .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
-                        .flex-grow-1
-                            h3.mb-0 Line tracer project using stm32 microcontroller  
-                            .subheading.mb-3 Embedded Systems Engineer
-                            p
-                                | Designed and integrated hardware components, including motors and infrared sensors, for an STM32-based line tracer robot. Developed motor control and sensor processing using embedded C, ensuring precise movement along the track.
-                        .flex-shrink-0
-                            span.text-primary March 2024 - June 2024
-
-                    .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
-                        .flex-grow-1
-                            h3.mb-0 Snake Game Development using C++ MFC project
-                            .subheading.mb-3 Game Developer
-                            p
-                                | Created a classic snake game using C++ and MFC, implementing game mechanics, controls, and collision detection. Developed an interactive UI with score tracking while gaining experience in object-oriented and event-driven programming.
-                        .flex-shrink-0
-                            span.text-primary March 2024 - June 2024
+                            span.text-primary July 2026 – Present
 
                     .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
                         .flex-grow-1
                             h3.mb-0 Republic of Korea Army
-                            .subheading.mb-3 Sergeant, Communication Specialist 
-                            p
-                                | Installed and optimized antennas for military operations, ensuring secure communication. Operated and maintained equipment in field training, applying electronics and telecommunications principles.
+                            .subheading.mb-3 Sergeant, Communication Specialist
+                            ul
+                                li Installed and configured field communication antennas to ensure stable and secure signal transmission during military operations.
+                                li Troubleshot and maintained communication equipment to minimize downtime in field environments.
+                                li Deployed and optimized communication systems across varying terrain and operational conditions, maintaining reliable real-time communication between units.
                         .flex-shrink-0
                             span.text-primary June 2022 - December 2023
+
+            hr.m-0
+
+            // Projects
+            section#projects.resume-section
+                .resume-section-content
+                    h2.mb-5 Projects
+
+                    .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
+                        .flex-grow-1
+                            h3.mb-0 5-DOF Bipedal Robot Deep Reinforcement Learning Project
+                            .subheading.mb-3 Deep Reinforcement Learning & Embedded Robotics
+                            ul
+                                li Developed self-balancing and walking policies for a 5-DOF bipedal robot using PPO-based deep reinforcement learning in NVIDIA Isaac Sim.
+                                li Designed the observation space and reward function and applied domain randomization to improve policy robustness and achieve Sim-to-Sim transfer.
+                                li Deployed the trained policy on an NVIDIA Jetson Orin Nano and integrated IMU feedback with CAN-based motor control.
+                                li Controlled eight GIM8108 motors and analyzed Sim-to-Real performance gaps between simulation and the physical robot.
+                        .flex-shrink-0
+                            span.text-primary January 2026 – June 2026
+
+                    .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
+                        .flex-grow-1
+                            h3.mb-0 PCB Design and Circuit Schematic Project
+                            .subheading.mb-3 PCB Design Engineer
+                            ul
+                                li Designed circuit schematics and PCB layouts using Cadence Capture and PCB Editor.
+                                li Created copper pours and optimized component placement and routing.
+                                li Applied PCB design principles related to signal integrity, manufacturability, and layout accuracy.
+                        .flex-shrink-0
+                            span.text-primary June 2024 - December 2024
+
+                    .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
+                        .flex-grow-1
+                            h3.mb-0 MATLAB-Based Sound Simulation Project
+                            .subheading.mb-3 MATLAB & Signal Processing Developer
+                            ul
+                                li Developed a MATLAB GUI for interactive piano sound generation and playback.
+                                li Implemented ADSR envelope modeling to reproduce realistic sound dynamics.
+                                li Applied Fourier Transform analysis and harmonic synthesis to improve audio realism.
+                        .flex-shrink-0
+                            span.text-primary June 2024 - December 2024
+
+
+                    .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
+                        .flex-grow-1
+                            h3.mb-0 Semiconductor Process Training
+                            .subheading.mb-3 Semiconductor Fabrication Trainee
+                            ul
+                                li Completed hands-on training in semiconductor fabrication processes and cleanroom procedures.
+                                li Studied wafer characteristics, wet cleaning, and major deposition methods.
+                                li Gained practical knowledge of CVD, PECVD, and PVD process principles.
+                        .flex-shrink-0
+                            span.text-primary June 2024 - December 2024
+
+                    .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
+                        .flex-grow-1
+                            h3.mb-0 Line Tracer Project Using STM32 Microcontroller
+                            .subheading.mb-3 Embedded Systems Engineer
+                            ul
+                                li Developed an STM32-based line tracer robot using infrared sensors and DC motors.
+                                li Implemented motor control and real-time sensor processing in embedded C.
+                                li Used GPIO, PWM, UART, and I²C peripherals for hardware–software integration.
+                                li Integrated the complete system and achieved functional line-following operation.
+                        .flex-shrink-0
+                            span.text-primary March 2024 - June 2024
+
+                    .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
+                        .flex-grow-1
+                            h3.mb-0 Snake Game Development Using C++ MFC
+                            .subheading.mb-3 C++ Application Developer
+                            ul
+                                li Developed a classic Snake game using C++ and Microsoft Foundation Classes.
+                                li Implemented movement controls, collision detection, scoring, and game-state logic.
+                                li Created an interactive graphical interface using object-oriented and event-driven programming.
+                        .flex-shrink-0
+                            span.text-primary March 2024 - June 2024
 
                     .d-flex.flex-column.flex-md-row.justify-content-between
                         .flex-grow-1
                             h3.mb-0 FPGA Stopwatch Development using Vivado
                             .subheading.mb-3 FPGA Developer
-                            p
-                                | Designed and deployed an FPGA-based stopwatch using Xilinx Vivado, optimizing timing logic for precision and efficiency. Enhanced expertise in digital logic design, HDL implementation, and FPGA architecture for advanced embedded systems.
+                            ul
+                                li Designed and implemented an FPGA-based digital stopwatch using Xilinx Vivado.
+                                li Developed timing, counting, reset, and display-control logic using HDL.
+                                li Strengthened practical knowledge of digital logic design, FPGA architecture, and hardware implementation.
                         .flex-shrink-0
                             span.text-primary September 2021 - December 2021
 
@@ -169,129 +253,112 @@ html(lang='en')
                             h3.mb-0 KOREATECH
                             .subheading.mb-3 Bachelor of Electronic Engineering
                             div Electronic Engineering - Semiconductor Track
-                            p GPA: 3.02
+                            p GPA: 3.4 / 4.5
                             .subheading.mb-3 Relevant courseworks
                             div Microprocessors, Advanced Electronic Circuit, Communication Engineering, Applied Programming, CAD PCB Editor(art work) , Semiconductor Process, Digital signal processing, Optoelectronics Engineering. 
                         .flex-shrink-0
-                            span.text-primary March 2024 - Current (Senior)
-
-                    .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
-                        .flex-grow-1
-                            h3.mb-0 Sun Moon University
-                            .subheading.mb-3 Bachelor of Electronic Engineering
-                            div Electronic Engineering 
-                            p GPA: 3.38
-                            .subheading.mb-3 Relevant courseworks
-                            div C Programming, Elementary Digital Logic, Circuit Theory, Engineering Mathematics Signals and systems, Digital System Design
-                        .flex-shrink-0
-                            span.text-primary March 2020 - December 2021 
+                            span.text-primary Current (Senior)
  
                     .d-flex.flex-column.flex-md-row.justify-content-between
                         .flex-grow-1
                             h3.mb-0 University of Hawai’I West O’ahu
                             .subheading.mb-3 Study Abroad
-                            p short-term course, winter session
-                        .flex-shrink-0
-                            span.text-primary Jan 2022 - Feb 2022
+                            p Participated in a short-term study abroad program focused on interdisciplinary coursework and collaborative learning in an international academic environment. Engaged in project-based activities and discussions with students from diverse backgrounds, strengthening cross-cultural communication and adaptability.
 
             hr.m-0
 
             // Skills
             section#skills.resume-section
                 .resume-section-content
-                    h2.mb-5 Skills
-                    .subheading.mb-3 Programming Languages & Tools
-                    ul.list-inline.dev-icons
-                        li.list-inline-item
-                            i.devicon-cplusplus-plain.colored(title="C++")
-                        li.list-inline-item
-                            i.devicon-c-plain.colored(title="C")
-                        li.list-inline-item
-                            i.devicon-html5-plain.colored(title="HTML")
-                        li.list-inline-item
-                            img(src='assets/icons/STM32.jpg', alt='Stm32', title='Stm32', width='50', height='50')
-                        li.list-inline-item
-                            img(src='assets/icons/Vivado.jpg', alt='Vivado', title='Vivado', width='50', height='50')
-                        li.list-inline-item
-                            img(src='assets/icons/premiere-pro.jpg', alt='Premiere Pro', title='Premiere Pro', width='50', height='50')
-                        li.list-inline-item
-                            img(src='assets/icons/Orcad.jpg', alt='Orcad', title='Orcad', width='50', height='50')
-                        li.list-inline-item
-                            img(src='assets/icons/Excel.jpg', alt='excel', title='excel', width='50', height='50')
-                        li.list-inline-item
-                            img(src='assets/icons/Powerpoint.jpg', alt='owerpoint', title='owerpoint', width='50', height='50')
-                        li.list-inline-item
-                            img(src='assets/icons/Solidworks.jpg', alt='oSolidworks', title='Solidworks', width='50', height='50')
+                    h2.mb-5 Technical Skills
+                    .skills-grid
+                        article.skill-category
+                            h3.skill-category-title Embedded Systems & Programming
+                            +skill('C / C++', 'upper-intermediate', 'Upper-Intermediate')
+                            +skill('Python', 'intermediate', 'Intermediate')
+                            +skill('MATLAB', 'intermediate', 'Intermediate')
+                            +skill('Nordic nRF9151 / nRF5340', 'intermediate', 'Intermediate')
+                            +skill('STM32', 'upper-intermediate', 'Upper-Intermediate')
+                            +skill('CAN', 'intermediate', 'Intermediate')
+                            +skill('FPGA / Verilog / Vivado', 'lower-intermediate', 'Lower-Intermediate')
 
-                    .subheading.mb-3 Language
-                    ul.fa-ul.mb-0
-                        li
-                            span.fa-li
-                                i.fas.fa-check
-                            | Korean: native speakers
-                        li
-                            span.fa-li
-                                i.fas.fa-check
-                            | TOEIC 805 out of 990, OPIC IH Level
+                        article.skill-category
+                            h3.skill-category-title AI & Robotics
+                            +skill('NVIDIA Isaac Sim (PPO-Based Reinforcement Learning)', 'intermediate', 'Intermediate')
+
+                        article.skill-category
+                            h3.skill-category-title Audio, AI Content & Localization
+                            +skill('ElevenLabs', 'upper-intermediate', 'Upper-Intermediate')
+                            +skill('Audio Quality Assurance', 'upper-intermediate', 'Upper-Intermediate')
+
+                        article.skill-category
+                            h3.skill-category-title Data, Collaboration & Productivity
+                            +skill('Git / GitHub', 'upper-intermediate', 'Upper-Intermediate')
+                            +skill('Slack', 'upper-intermediate', 'Upper-Intermediate')
+                            +skill('Microsoft Office', 'advanced', 'Advanced')
+
+                        article.skill-category
+                            h3.skill-category-title Languages
+                            +skill('Korean', 'advanced', 'Advanced')
+                            +skill('English', 'upper-intermediate', 'Upper-Intermediate')
                        
 
             hr.m-0
-
-            // Interests
-            section#interests.resume-section
-                .resume-section-content
-                    h2.mb-5 Interests
-                    p
-                        | I have a detail-oriented and meticulous personality, which is why I found CAD PCB Editor particularly interesting as it closely reflects my traits. I aspire to pursue an internship either as a Hardware Engineer or in the field of OrCAD PCB Editor.
-                    p.mb-0
-                        | While my previous projects may not be directly related, I have experience designing and integrating hardware components, which has strengthened my understanding of electronic systems. Regardless of prior experience, I am highly motivated to learn and dedicate myself to excelling in this field.
-
-            hr.m-0
-
-            // Cover-letter
-            section#Cover-letter.resume-section
-                .resume-section-content
-                    h2.mb-5 Cover-letter
-                    p  
-                        span.text-black Dear Recruitment Team,
-
-                    p.mb-3
-                        span.text-black  I am writing to express my strong interest in semiconductor engineering Intern position. Based on my studies in microprocessors, electronic circuits, C programming and other related subjects, I have developed a strong interest in pursuing a career in the semiconductor industry, particularly in the maintenance and inspection of semiconductor products and systems. 
-                        span.text-black  I am eager to advance my knowledge and skills in this field to become a successful professional in the semiconductor
-
-                    p.mb-3
-                        span.text-black  In my final term project, a line tracer, I used the STM32 Nucleo board and learned how to work with GPIO, interrupts, UART/I2C communication, ADC, and other functions on a weekly basis. 
-                        span.text-black  it was my first experience with STM board, I encountered many challenges. To overcome these difficulties, my classmates and I formed a study group, meeting multiple times outside of class to discuss challenging concepts and explore more efficient ways to use these functions.
-
-                    p.mb-3
-                        span.text-black  We also frequently referred to the Reference Manual and User Manual on the www.st.com website, which taught us how to effectively navigate and utilize technical resources.
-
-                    p.mb-3
-                        span.text-black  This course sparked my interest in semiconductor maintenance and troubleshooting. One notable challenge was the setting value issue, which I resolved by carefully reviewing settings and experimenting with configurations based on the Reference or User Manual. 
-                        span.text-black  This experience deepened my interest in diagnosing and solving complex issues. As a result, I am eager to gain hands-on experience in maintaining and inspecting semiconductor systems.
-
-                    p.mb-3
-                        span.text-black  I am sure that I would be a valuable asset to your company, and I would welcome the opportunity to discuss how my skills align with your needs. Thank you for your time and consideration, and I look forward to hearing from you soon.
-
-                    p.mb-3
-                        span.text-black  Sincerely,
-                    p.mb-0
-                        span.text-black  Jeon JunYoung
-
-            hr.m-0
-
 
             // Activity
             section#Activity.resume-section
                 .resume-section-content
                     h2.mb-5 Activity
-                    div
+
+                    .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
+                        .flex-grow-1
+                            h3.mb-0 Startup for All Project — Sentinel Labs
+                            .subheading.mb-3 1st Cohort · Co-Founder & Embedded Systems Lead
+                            ul
+                                li Selected for the first cohort of the Korean government-backed “Startup for All Project.”
+                                li Led the embedded development of an IoT-based particulate-matter exposure monitoring and hazard-alert system for industrial worksites.
+                                li Integrated Nordic nRF5340, particulate-matter sensors, radar, BLE communication, and local data logging.
+                        .flex-shrink-0
+                            span.text-primary 2026
+
+                    .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
+                        .flex-grow-1
+                            h3.mb-0 Korean Patent Application No. 10-2026-0135684
+                            .subheading.mb-3 Named Inventor
+                            ul
+                                li Developed an embedded particulate-matter monitoring and hazard-alert system for industrial worksites.
+                        .flex-shrink-0
+                            span.text-primary 2026
+
+                    .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
+                        .flex-grow-1
+                            h3.mb-0 Student Startup 300+ — Memory Labs
+                            .subheading.mb-3 2026 Student Startup 300+ · Developer / Team Member
+                            ul
+                                li Participated as a developer and technical team member of Memory Labs.
+                                li Contributed to prototype development, technical implementation, and feasibility review of the startup project.
+                                li Collaborated with team members to translate the project concept into an implementable product or service.
+                                li Selected as a finalist in the 2026 Student Startup 300+ program.
+                        .flex-shrink-0
+                            span.text-primary 2026
+
                     h3.mb-0 Ls Group & Green Umbrella Children’s Foundation
-                    div
+                    .subheading.mb-3 Science Instructor, LS Dream Science Class
+                    ul.mb-5
+                        li Led a one-month science program for elementary school students focused on assembling science kits and explaining key principles.
+                        li Managed classroom dynamics and maintained high student engagement.
+                        li Adapted teaching methods for diverse learning styles to create an interactive learning experience.
+
+                    h3.mb-0 UKC 2025 Poster Presentation
                     p
-                      | Science Instructor, LS Dream Science Class
+                      | Jeon, J., et al. Deploying Low-Cost Sensor Networks for Wildland Fire Smoke Monitoring in Rural Nevada, UKC 2025 (U.S.–Korea Conference), Poster Presentation, organized by the Korean-American Scientists and Engineers Association (KSEA).
+                    ul
+                        li Designed and deployed a low-cost sensor network to monitor wildfire smoke in rural Nevada environments.
+                        li Developed embedded firmware for sensor acquisition and system integration on resource-constrained hardware.
+                        li Implemented cloud-based data transmission and storage for remote monitoring and analysis.
+                        li Presented the system architecture, deployment challenges, and field data to an international academic audience.
                     p
-                      | Led and instructed elementary school students in a one-month program focused on assembling science kits and explaining key scientific principles. Demonstrated leadership by effectively managing classroom dynamics and maintaining high student engagement. Adapted teaching methods to accommodate diverse learning styles, ensuring a successful and interactive learning experience.
+                      a(href='https://docs.google.com/presentation/d/1oYFl6tp_VYSS_C3V81SEf098fFhzpGcq/edit?usp=drive_link&ouid=100431925273316780165&rtpof=true&sd=true', target='_blank', rel='noopener noreferrer') UKC Poster
 
                             
                            
