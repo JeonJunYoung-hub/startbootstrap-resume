@@ -10958,6 +10958,120 @@ section.resume-section .resume-section-content {
   width: 100%;
 }
 
+.skills-grid {
+  --skill-accent: #1dade2;
+  --skill-track: rgba(73, 80, 87, 0.22);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 3rem 4rem;
+}
+
+.skill-category-title {
+  margin-bottom: 1.5rem;
+  font-size: 1.65rem;
+}
+
+.skill-item {
+  margin-bottom: 1.5rem;
+}
+
+.skill-header {
+  margin-bottom: 0.35rem;
+}
+
+.skill-name {
+  color: #343a40;
+  font-weight: 800;
+}
+
+.skill-scale {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  min-height: 1.5rem;
+}
+
+.skill-track {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  height: 3px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--skill-track);
+}
+
+.skill-track::after {
+  display: block;
+  width: 0;
+  height: 100%;
+  content: "";
+  background: var(--skill-accent);
+}
+
+.skill-item[data-level='lower-intermediate'] .skill-track::after {
+  width: 25%;
+}
+
+.skill-item[data-level='intermediate'] .skill-track::after {
+  width: 50%;
+}
+
+.skill-item[data-level='upper-intermediate'] .skill-track::after {
+  width: 75%;
+}
+
+.skill-item[data-level='advanced'] .skill-track::after {
+  width: 100%;
+}
+
+.skill-point {
+  position: relative;
+  z-index: 1;
+  justify-self: center;
+  width: 14px;
+  height: 14px;
+  border: 3px solid var(--skill-accent);
+  border-radius: 50%;
+  background: #fff;
+}
+
+.skill-item[data-level='beginner'] .skill-point[data-stage='beginner'],
+.skill-item[data-level='lower-intermediate'] .skill-point[data-stage='lower-intermediate'],
+.skill-item[data-level='intermediate'] .skill-point[data-stage='intermediate'],
+.skill-item[data-level='upper-intermediate'] .skill-point[data-stage='upper-intermediate'],
+.skill-item[data-level='advanced'] .skill-point[data-stage='advanced'] {
+  background: var(--skill-accent);
+  box-shadow: 0 0 0 3px rgba(29, 173, 226, 0.18);
+}
+
+.skill-labels {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  color: #6c757d;
+  font-size: 0.7rem;
+  line-height: 1.2;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.skill-item[data-level='beginner'] .skill-labels [data-stage='beginner'],
+.skill-item[data-level='lower-intermediate'] .skill-labels [data-stage='lower-intermediate'],
+.skill-item[data-level='intermediate'] .skill-labels [data-stage='intermediate'],
+.skill-item[data-level='upper-intermediate'] .skill-labels [data-stage='upper-intermediate'],
+.skill-item[data-level='advanced'] .skill-labels [data-stage='advanced'] {
+  color: var(--skill-accent);
+  font-weight: 800;
+}
+
+@media (max-width: 767.98px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
 @media (min-width: 768px) {
   section.resume-section {
     min-height: 100vh;
